@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="ZEX_HTML_EDITOR">
+ <PROG NAME="ZEX_HTML_EDITOR" VARCL="X" SUBC="1" RSTAT="T" RMAND="800" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="HTML Editor" LENGTH="11 "/>
+   </language>
+  </textPool>
+  <dynpros>
+   <dynpro PROG="ZEX_HTML_EDITOR" DNUM="9001" FNUM="9001" BZMX="27 " BZBR="185 " MILI="192 " MICO="37 " MALI="0 " MACO="0 " NOLI="27 " NOCO="185 " VALP="0 " CUAN="G" SPRA="E" DTEXT="HTML Editor">
+    <dynprofield FNAM="EDITOR" DIDX="001B" FLG1="00" FLG2="00" FLG3="00" FILL="U" FMB1="30" FMB2="00" LENG="3A" LINE="01" COLN="03" LANF="00" LBLK="00" LREP="00" AUTH="101" AGLT="01" ADEZ="01"/>
+    <dynprofield FNAM="VIEWER" DIDX="001B" FLG1="00" FLG2="00" FLG3="00" FILL="U" FMB1="30" FMB2="00" LENG="3A" LINE="01" COLN="3F" LANF="00" LBLK="00" LREP="00" AUTH="102" AGLT="01" ADEZ="01"/>
+    <dynprofield FNAM="URL" DIDX="0000" FLG1="00" FLG2="00" FLG3="00" FMB1="38" FMB2="00" LENG="03" LINE="01" COLN="7B" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" ITYP="0" AGLT="00" ADEZ="00" STXT="URL" RES1="                                                                                                                                                                                                                                                        X"/>
+    <dynprofield FNAM="TEXT_URL" DIDX="0038" FLG1="81" FLG2="00" FLG3="80" FMB1="08" FMB2="00" LENG="96" LINE="01" COLN="7F" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" ITYP="C" AGLT="00" ADEZ="00" STXT="____________________________________________________________________________________________________________________________________"/>
+    <dynprofield FNAM="REFRESH" DIDX="0003" FLG1="00" FLG2="00" FLG3="00" FILL="P" FMB1="30" FMB2="00" LENG="04" LINE="01" COLN="B8" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="103" AGLT="00" ADEZ="00" STXT="@42@" RES1="                                                                                                                                                                        REFRESH"/>
+    <dynprofield FNAM="BROWSER" DIDX="001A" FLG1="00" FLG2="00" FLG3="00" FILL="U" FMB1="30" FMB2="00" LENG="40" LINE="02" COLN="7B" LANF="00" LBLK="00" LREP="00" AUTH="104" AGLT="01" ADEZ="01"/>
+    <dynprofield FNAM="OK_CODE" DIDX="0000" FLG1="80" FLG2="10" FLG3="00" FMB1="00" FMB2="00" LENG="14" LINE="FF" COLN="01" LTYP="O" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AGLT="00" ADEZ="00" STXT="____________________"/>
+    <dynproflowsource>PROCESS BEFORE OUTPUT.
+  MODULE clear_ok_code.
+  MODULE status_9001.
+
+PROCESS AFTER INPUT.
+  MODULE user_command_9001.</dynproflowsource>
+   </dynpro>
+  </dynpros>
+  <pfstatus>
+   <pfstatus_sta CODE="MAIN9001" MODAL="D" ACTCODE="000001" PFKCODE="000001" BUTCODE="0001" INT_NOTE="PF-Status for Screen 9001"/>
+   <pfstatus_fun CODE="BACK" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_PDIR_BACK" ICON_ID="@CF@" FUN_TEXT="BACK" INFO_TEXT="Go back"/>
+   <pfstatus_fun CODE="BACK" TEXTNO="002" TEXT_TYPE="S" FUN_TEXT="Back"/>
+   <pfstatus_fun CODE="CANCEL" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_CANCEL" ICON_ID="@0W@" FUN_TEXT="Cancel"/>
+   <pfstatus_fun CODE="ENTER" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Enter"/>
+   <pfstatus_fun CODE="EXECUTE" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_EXECUTE_OBJECT" ICON_ID="@15@" FUN_TEXT="Execute" INFO_TEXT="Execute HTML"/>
+   <pfstatus_fun CODE="EXIT" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Exit"/>
+   <pfstatus_fun CODE="REFRESH" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_REFRESH" ICON_ID="@42@" FUN_TEXT="Refresh" INFO_TEXT="Refresh Webpage"/>
+   <pfstatus_but PFK_CODE="000001" CODE="0001" NO="01" PFNO="05"/>
+   <pfstatus_pfk CODE="000001" PFNO="00" FUNCODE="ENTER" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="02" FUNCODE="BACK" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="03" FUNCODE="BACK" FUNNO="002"/>
+   <pfstatus_pfk CODE="000001" PFNO="05" FUNCODE="EXECUTE" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="06" FUNCODE="REFRESH" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="12" FUNCODE="CANCEL" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="15" FUNCODE="EXIT" FUNNO="001"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="BACK"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="CANCEL"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="ENTER"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="EXECUTE"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="EXIT"/>
+   <pfstatus_set STATUS="MAIN9001" FUNCTION="REFRESH"/>
+   <pfstatus_doc OBJ_TYPE="A" OBJ_CODE="000001" MODAL="D" INT_NOTE="PF-Status for Screen 9001"/>
+   <pfstatus_doc OBJ_TYPE="P" OBJ_CODE="000001" MODAL="D" INT_NOTE="PF-Status for Screen 9001"/>
+   <pfstatus_doc OBJ_TYPE="B" OBJ_CODE="000001" SUB_CODE="0001" MODAL="D" INT_NOTE="PF-Status for Screen 9001"/>
+   <pfstatus_tit CODE="TITL9001" TEXT="HTML Live Editor &amp;1 Browser"/>
+  </pfstatus>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZEX_HTML_EDITOR
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;  A HTML Editor and browser built just for fun!!! :D
+*&amp;---------------------------------------------------------------------*
+
+REPORT  zex_html_editor.
+
+START-OF-SELECTION.
+  CALL SCREEN 9001.
+  INCLUDE zex_top.
+  INCLUDE zex_f01.
+  INCLUDE zex_o01.
+  INCLUDE zex_i01.</source>
+ </PROG>
+ <PROG NAME="ZEX_TOP" VARCL="X" SUBC="I" LEVL="700" RSTAT="K" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZRT_TOP" LENGTH="15 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZEX_TOP
+*&amp;---------------------------------------------------------------------*
+
+  CONSTANTS:  c_editor(6)     TYPE c VALUE &apos;EDITOR&apos;,
+              c_viewer(6)     TYPE c VALUE &apos;VIEWER&apos;,
+              c_browser(7)    TYPE c VALUE &apos;BROWSER&apos;.
+
+  DATA:       g_editor        TYPE REF TO cl_gui_textedit,
+              editor          TYPE REF TO cl_gui_custom_container,
+              viewer          TYPE REF TO cl_gui_custom_container,
+              browser         TYPE REF TO cl_gui_custom_container,
+              html_viewer     TYPE REF TO cl_gui_html_viewer,
+              browser_viewer  TYPE REF TO cl_gui_html_viewer,
+              ok_code         LIKE sy-ucomm.
+  DATA:       g_text          TYPE STANDARD TABLE OF w3html,
+              text_url        TYPE c LENGTH 126,
+              url             TYPE c LENGTH 256,
+              g_continue      TYPE c.</source>
+ </PROG>
+ <PROG NAME="ZEX_F01" VARCL="X" SUBC="I" LEVL="700" RSTAT="T" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZRT_F01" LENGTH="15 "/>
+   </language>
+  </textPool>
+  <source>*----------------------------------------------------------------------*
+***INCLUDE ZEX_F01 .
+*----------------------------------------------------------------------*
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  create_instances
+*&amp;---------------------------------------------------------------------*
+FORM create_instances .
+  IF editor IS INITIAL.
+*   create instance for HTML Editor custom control
+    CREATE OBJECT editor
+      EXPORTING
+        container_name              = c_editor
+      EXCEPTIONS
+        cntl_error                  = 1
+        cntl_system_error           = 2
+        create_error                = 3
+        lifetime_error              = 4
+        lifetime_dynpro_dynpro_link = 5
+        OTHERS                      = 6
+        .
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+  IF g_editor IS INITIAL.
+*   create instance for HTML Editor text editor
+    CREATE OBJECT g_editor
+      EXPORTING
+        wordwrap_mode              = cl_gui_textedit=&gt;wordwrap_at_windowborder
+        wordwrap_to_linebreak_mode = cl_gui_textedit=&gt;true
+        parent                     = editor
+      EXCEPTIONS
+        error_cntl_create      = 1
+        error_cntl_init        = 2
+        error_cntl_link        = 3
+        error_dp_create        = 4
+        gui_type_not_supported = 5
+        OTHERS                 = 6
+        .
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+  PERFORM create_viewer_instances.
+  IF browser IS INITIAL.
+*   create instance for browser custom control
+    CREATE OBJECT browser
+      EXPORTING
+        container_name              = c_browser
+      EXCEPTIONS
+        cntl_error                  = 1
+        cntl_system_error           = 2
+        create_error                = 3
+        lifetime_error              = 4
+        lifetime_dynpro_dynpro_link = 5
+        OTHERS                      = 6
+        .
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+  IF browser_viewer IS INITIAL.
+*   create instance for browser
+    CREATE OBJECT browser_viewer
+      EXPORTING
+        parent             =  browser
+      EXCEPTIONS
+        cntl_error         = 1
+        cntl_install_error = 2
+        dp_install_error   = 3
+        dp_error           = 4
+        OTHERS             = 5
+        .
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+ENDFORM.                    &quot; create_instances
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  display_initial
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*  --&gt;  p1        text
+*  &lt;--  p2        text
+*----------------------------------------------------------------------*
+FORM display_initial .
+  IF html_viewer IS NOT INITIAL.
+    REFRESH g_text.
+    APPEND &apos;&lt;HTML&gt;&lt;BODY&gt;&lt;H4&gt;Press Execute HTML(F5) to view your HTML Output!&lt;/H4&gt;&lt;/BODY&gt;&lt;/HTML&gt;&apos;
+    TO  g_text.
+    CALL METHOD html_viewer-&gt;load_data
+      IMPORTING
+        assigned_url         = url
+      CHANGING
+        data_table           = g_text
+      EXCEPTIONS
+        dp_invalid_parameter = 1
+        dp_error_general     = 2
+        cntl_error           = 3
+        OTHERS               = 4.
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+    CALL METHOD html_viewer-&gt;show_url
+      EXPORTING
+        url                    = url
+      EXCEPTIONS
+        cntl_error             = 1
+        cnht_error_not_allowed = 2
+        cnht_error_parameter   = 3
+        dp_error_general       = 4
+        OTHERS                 = 5.
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+ENDFORM.                    &quot; display_initial
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  check_editor_initial
+*&amp;---------------------------------------------------------------------*
+FORM check_editor_initial .
+  IF g_editor IS NOT INITIAL.
+    CALL METHOD g_editor-&gt;get_text_as_stream
+      IMPORTING
+        text                   = g_text
+      EXCEPTIONS
+        error_dp               = 1
+        error_cntl_call_method = 2
+        OTHERS                 = 3.
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+    IF g_text IS NOT INITIAL.
+      CALL FUNCTION &apos;C14A_POPUP_SAVE_BEFORE_ACTION&apos;
+        EXPORTING
+          i_text1    = &apos;Unsaved Data will be lost.&apos;
+        IMPORTING
+          e_continue = g_continue.
+      IF g_continue = &apos;X&apos;.
+        LEAVE PROGRAM.
+      ENDIF.
+    ENDIF.
+  ENDIF.
+ENDFORM.                    &quot; check_editor_initial
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  EXEC_HTML
+*&amp;---------------------------------------------------------------------*
+FORM exec_html .
+  DATA: url TYPE c LENGTH 255.
+  PERFORM free_instances.
+  REFRESH g_text.
+  PERFORM create_viewer_instances.
+  CALL METHOD g_editor-&gt;get_text_as_stream
+    IMPORTING
+      text                   = g_text
+    EXCEPTIONS
+      error_dp               = 1
+      error_cntl_call_method = 2
+      OTHERS                 = 3.
+  IF sy-subrc &lt;&gt; 0.
+    MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+               WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+  ENDIF.
+  IF g_text IS INITIAL.
+    PERFORM display_initial.
+    EXIT.
+  ENDIF.
+  CALL METHOD html_viewer-&gt;load_data  &quot; generate url
+    IMPORTING
+      assigned_url         = url
+    CHANGING
+      data_table           = g_text
+    EXCEPTIONS
+      dp_invalid_parameter = 1
+      dp_error_general     = 2
+      cntl_error           = 3
+      OTHERS               = 4.
+  IF sy-subrc &lt;&gt; 0.
+    MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+               WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+  ENDIF.
+  html_viewer-&gt;show_url( url = url ). &quot; display HTML o/p
+ENDFORM.                    &quot; EXEC_HTML
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  free_instances
+*&amp;---------------------------------------------------------------------*
+FORM free_instances .
+  IF html_viewer IS NOT INITIAL.
+    CALL METHOD html_viewer-&gt;free.
+    FREE html_viewer.
+  ENDIF.
+  IF viewer IS NOT INITIAL.
+    CALL METHOD viewer-&gt;free.
+    FREE viewer.
+  ENDIF.
+ENDFORM.                    &quot; free_instances
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  display_webpage
+*&amp;---------------------------------------------------------------------*
+FORM display_webpage .
+  IF text_url IS NOT INITIAL.
+    CALL METHOD browser_viewer-&gt;show_url
+      EXPORTING
+        url                    = text_url
+      EXCEPTIONS
+        cntl_error             = 1
+        cnht_error_not_allowed = 2
+        cnht_error_parameter   = 3
+        dp_error_general       = 4
+        OTHERS                 = 5.
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+ENDFORM.                    &quot; display_webpage
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  CREATE_VIEWER_INSTANCES
+*&amp;---------------------------------------------------------------------*
+FORM create_viewer_instances .
+  IF viewer IS INITIAL.
+    CREATE OBJECT viewer
+      EXPORTING
+        container_name              = c_viewer
+      EXCEPTIONS
+        cntl_error                  = 1
+        cntl_system_error           = 2
+        create_error                = 3
+        lifetime_error              = 4
+        lifetime_dynpro_dynpro_link = 5
+        OTHERS                      = 6
+        .
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDIF.
+  CREATE OBJECT html_viewer
+    EXPORTING
+      parent             =  viewer
+    EXCEPTIONS
+      cntl_error         = 1
+      cntl_install_error = 2
+      dp_install_error   = 3
+      dp_error           = 4
+      OTHERS             = 5
+      .
+  IF sy-subrc &lt;&gt; 0.
+    MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+               WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+  ENDIF.
+ENDFORM.                    &quot; CREATE_VIEWER_INSTANCES
+*&amp;---------------------------------------------------------------------*
+*&amp;      Form  REFRESH_WEBPAGE
+*&amp;---------------------------------------------------------------------*
+FORM refresh_webpage .
+  browser_viewer-&gt;do_refresh( ).
+  browser_viewer-&gt;get_current_url( IMPORTING url = url ).
+ENDFORM.                    &quot; REFRESH_WEBPAGE</source>
+ </PROG>
+ <PROG NAME="ZEX_O01" VARCL="X" SUBC="I" LEVL="700" RSTAT="K" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZRT_O01" LENGTH="15 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZEX_O01
+*&amp;---------------------------------------------------------------------*
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  status_9001  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*       Screen 9001 PBO
+*----------------------------------------------------------------------*
+MODULE status_9001 OUTPUT.
+  SET PF-STATUS &apos;MAIN9001&apos;.
+  SET TITLEBAR &apos;TITL9001&apos; WITH &apos;&amp;&apos;.
+  PERFORM create_instances.
+  PERFORM display_initial.
+ENDMODULE.                 &quot; status_9001  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  clear_ok_code  OUTPUT
+*&amp;---------------------------------------------------------------------*
+MODULE clear_ok_code OUTPUT.
+  CLEAR ok_code.
+ENDMODULE.                 &quot; clear_ok_code  OUTPUT</source>
+ </PROG>
+ <PROG NAME="ZEX_I01" VARCL="X" SUBC="I" LEVL="700" RSTAT="K" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZRT_I01" LENGTH="15 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZEX_I01
+*&amp;---------------------------------------------------------------------*
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  user_command_9001  INPUT
+*&amp;---------------------------------------------------------------------*
+*       Screen 9001 PAI
+*----------------------------------------------------------------------*
+MODULE user_command_9001 INPUT.
+  CASE ok_code.
+    WHEN &apos;BACK&apos; OR &apos;EXIT&apos;.
+      PERFORM check_editor_initial. &quot; check if any text written in editor
+    WHEN &apos;CANCEL&apos;.
+      LEAVE PROGRAM.
+    WHEN &apos;EXECUTE&apos;.
+      PERFORM exec_html.
+    WHEN &apos;ENTER&apos;.
+      PERFORM display_webpage.
+    WHEN &apos;REFRESH&apos;.
+      PERFORM refresh_webpage.
+    WHEN OTHERS.
+  ENDCASE.
+ENDMODULE.                 &quot; user_command_9001  INPUT</source>
+ </PROG>
+</nugget>
