@@ -1,5 +1,5 @@
 *----------------------------------------------------------------------*
-*INCLUDE ZEX_F01 .
+***INCLUDE ZEX_F01 .
 *----------------------------------------------------------------------*
 
 *&---------------------------------------------------------------------*
@@ -45,41 +45,6 @@ FORM create_instances .
     ENDIF.
   ENDIF.
   PERFORM create_viewer_instances.
-  IF browser IS INITIAL.
-*   create instance for browser custom control
-    CREATE OBJECT browser
-      EXPORTING
-        container_name              = c_browser
-      EXCEPTIONS
-        cntl_error                  = 1
-        cntl_system_error           = 2
-        create_error                = 3
-        lifetime_error              = 4
-        lifetime_dynpro_dynpro_link = 5
-        OTHERS                      = 6
-        .
-    IF sy-subrc <> 0.
-      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
-                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
-    ENDIF.
-  ENDIF.
-  IF browser_viewer IS INITIAL.
-*   create instance for browser
-    CREATE OBJECT browser_viewer
-      EXPORTING
-        parent             =  browser
-      EXCEPTIONS
-        cntl_error         = 1
-        cntl_install_error = 2
-        dp_install_error   = 3
-        dp_error           = 4
-        OTHERS             = 5
-        .
-    IF sy-subrc <> 0.
-      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
-                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
-    ENDIF.
-  ENDIF.
 ENDFORM.                    " create_instances
 *&---------------------------------------------------------------------*
 *&      Form  display_initial
@@ -204,26 +169,6 @@ FORM free_instances .
   ENDIF.
 ENDFORM.                    " free_instances
 *&---------------------------------------------------------------------*
-*&      Form  display_webpage
-*&---------------------------------------------------------------------*
-FORM display_webpage .
-  IF text_url IS NOT INITIAL.
-    CALL METHOD browser_viewer->show_url
-      EXPORTING
-        url                    = text_url
-      EXCEPTIONS
-        cntl_error             = 1
-        cnht_error_not_allowed = 2
-        cnht_error_parameter   = 3
-        dp_error_general       = 4
-        OTHERS                 = 5.
-    IF sy-subrc <> 0.
-      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
-                 WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
-    ENDIF.
-  ENDIF.
-ENDFORM.                    " display_webpage
-*&---------------------------------------------------------------------*
 *&      Form  CREATE_VIEWER_INSTANCES
 *&---------------------------------------------------------------------*
 FORM create_viewer_instances .
@@ -259,10 +204,3 @@ FORM create_viewer_instances .
                WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
   ENDIF.
 ENDFORM.                    " CREATE_VIEWER_INSTANCES
-*&---------------------------------------------------------------------*
-*&      Form  REFRESH_WEBPAGE
-*&---------------------------------------------------------------------*
-FORM refresh_webpage .
-  browser_viewer->do_refresh( ).
-  browser_viewer->get_current_url( IMPORTING url = url ).
-ENDFORM.                    " REFRESH_WEBPAGE

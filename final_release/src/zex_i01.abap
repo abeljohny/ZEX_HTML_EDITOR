@@ -15,10 +15,5 @@ MODULE user_command_9001 INPUT.
       LEAVE PROGRAM.
     WHEN 'EXECUTE'.
       PERFORM exec_html.
-    WHEN 'ENTER'.
-      PERFORM display_webpage.
-    WHEN 'REFRESH'.
-      PERFORM refresh_webpage.
-    WHEN OTHERS.
   ENDCASE.
 ENDMODULE.                 " user_command_9001  INPUT

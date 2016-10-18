@@ -1,11 +1,11 @@
 *&---------------------------------------------------------------------*
-*& Report  ZRT_HTML_EDITOR
+*& Report  ZEX_HTML_EDITOR
 *&
 *&---------------------------------------------------------------------*
-*&  A HTML Editor and browser built just for fun!!! :D
+*&  ABAP HTML Editor
 *&---------------------------------------------------------------------*
 
-REPORT  zproject_01.
+REPORT  zex_html_editor.
 
 START-OF-SELECTION.
   CALL SCREEN 9001.
