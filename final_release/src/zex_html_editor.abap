@@ -1,8 +1,11 @@
 *&---------------------------------------------------------------------*
-*& Report  ZEX_HTML_EDITOR
-*&
+*& Report  ZEX_HTML_EDITOR                                             *
 *&---------------------------------------------------------------------*
-*&  ABAP HTML Editor
+*& Program Name : ZEX_HTML_EDITOR                                      *
+*& Description  : A simple HTML parsing tool                           *
+*& Developer    : Abel Johny                                           *
+*& Place        : Trivandrum, India                                    *                                                                                                      *
+*& Email        : abeljohny093@gmail.com                               *
 *&---------------------------------------------------------------------*
 
 REPORT  zex_html_editor.
